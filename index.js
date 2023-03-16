@@ -3,7 +3,6 @@ const grid = document.querySelector(".grid")
 
 
 function getSize() {
-
     const selectBtn = document.querySelector(".selectBtn")
     selectBtn.addEventListener("click", function () {
         selectedSize = prompt("Enter the grid size (ex: 16,32,64 ect)", "32")
@@ -18,10 +17,9 @@ function getSize() {
         }
 
     })
-
-
 }
 getSize()
+
 
 function setSize(selectedSize) {
     grid.style.gridTemplateColumns = `repeat(${selectedSize}, 1fr`;
