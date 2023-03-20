@@ -1,5 +1,6 @@
 //get grid the grid div
 const grid = document.querySelector(".grid")
+selectedSize = 16
 
 //default color
 let color = 'black'
@@ -8,6 +9,7 @@ let color = 'black'
 //Ask the size of the grid once the button is clicked then call for setSize()
 function getSize() {
     const selectBtn = document.querySelector(".selectBtn")
+    setSize(selectedSize)
     selectBtn.addEventListener("click", function () {
 
         //Deleting existing cells before creating a new grid to prevent stacking up cells.
@@ -67,5 +69,5 @@ function setColor(colorChoice) {
 //Reset the grid back to white when reset button is clicked.
 function resetGrid() {
     let cells = document.querySelectorAll(".cell")
-    cells.forEach((cell) => cell.style.backgroundColor = 'white')
+    cells.forEach((cell) => cell.style.backgroundColor = 'transparent')
 }
