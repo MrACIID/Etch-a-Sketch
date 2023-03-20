@@ -1,4 +1,6 @@
 const grid = document.querySelector(".grid")
+let color = 'black'
+
 
 
 
@@ -22,23 +24,33 @@ getSize()
 
 
 function setSize(selectedSize) {
+
     grid.style.gridTemplateColumns = `repeat(${selectedSize}, 1fr`;
     grid.style.gridTemplateRows = `repeat(${selectedSize}, 1fr`;
     let size = selectedSize * selectedSize
     for (let i = 0; i < size; i++) {
-        let singleSquare = document.createElement("div")
-        singleSquare.addEventListener("mouseover", function () {
-            singleSquare.style.backgroundColor = "black"
+        let singleCell = document.createElement("div")
+        singleCell.classList.add("cell")
 
-        })
-        grid.insertAdjacentElement("beforeend", singleSquare)
+        singleCell.addEventListener("mouseover", colorDiv)
+        grid.insertAdjacentElement("beforeend", singleCell)
     }
 }
 
+function colorDiv() {
+    if (color == "RGB") {
+        this.style.backgroundColor = `hsl(${Math.random() * 360},100%,50%)`
+    }
+    else (
+        this.style.backgroundColor = 'black'
+    )
+}
 
+function setColor(colorChoice) {
+    color = colorChoice
+}
 
-
-
-
-
-
+function resetGrid() {
+    let cells = document.querySelectorAll(".cell")
+    cells.forEach((cell) => cell.style.backgroundColor = 'white')
+}
