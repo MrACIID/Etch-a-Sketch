@@ -8,10 +8,12 @@ body {
     justify-content: center;
     align-items: center;
     gap: 20px;
+    background-color: #181A1B;
 }
 
 h1 {
     font-size: 50px;
+    color: white;
 }
 
 .selectBtn {

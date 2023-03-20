@@ -10,7 +10,7 @@ function getSize() {
     const selectBtn = document.querySelector(".selectBtn")
     selectBtn.addEventListener("click", function () {
 
-        //Deleting existing grid before creating a new one.
+        //Deleting existing cells before creating a new grid to prevent stacking up cells.
         document.querySelectorAll(".cell").forEach((e) => e.parentNode.removeChild(e))
 
         //Ask for a desired size
