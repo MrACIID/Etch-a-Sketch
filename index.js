@@ -53,12 +53,17 @@ function setSize(selectedSize) {
 
 //Setup the colors logic.
 function colorDiv() {
+
     if (color == "RGB") {
         this.style.backgroundColor = `hsl(${Math.random() * 360},100%,50%)`
+    }
+    else if (color == "transparent") {
+        this.style.backgroundColor = 'transparent'
     }
     else (
         this.style.backgroundColor = 'black'
     )
+
 }
 
 //Get the color choice from the clicked buttons.
